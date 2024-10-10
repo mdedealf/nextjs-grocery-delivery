@@ -6,19 +6,20 @@ const NavBar: FC = () => {
 
   const CATEGORIES = [
     "All",
+    "Exotic",
+    "Fresh Veggie",
     "Spicy",
     "Dressings",
     "Sweet",
     "Roots",
     "White Onion",
-    "Fresh Veggie",
     "Fresh Garlic",
     "Red Chili Pepper",
     "Ranch Dressing",
   ];
 
   return (
-    <nav className="flex items-start gap-[32px] mb-[20px] mt-[26px] overflow-x-scroll min-h-[40px] md:min-h-[50px] w-full whitespace-nowrap">
+    <nav className="flex items-start gap-[26px] md:gap-[36px] mb-[20px] mt-[26px] md:mt-[46px] overflow-x-scroll  min-h-[40px] md:min-h-[52px] w-full whitespace-nowrap">
       {CATEGORIES.map((category, index) => (
         <div
           key={index}
@@ -27,7 +28,7 @@ const NavBar: FC = () => {
             "border-b-2 border-black px-[10px] pb-[6px]"
           } `}
         >
-          <span className="text-[18px] font-[400px] leading-[24px] text-black">
+          <span className="text-[18px] md:text-[20px] font-[400px] leading-[24px] text-black cursor-pointer">
             {category}
           </span>
         </div>
