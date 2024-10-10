@@ -1,7 +1,7 @@
-import Image from "next/image";
+import ProductCard from "@/components/ProductCard";
 import { FC } from "react";
 
-const ItemsLists: FC = () => {
+const ProductLists: FC = () => {
   const DUMMY_PRODUCTS = [
     {
       price: 0.0032,
@@ -582,60 +582,15 @@ const ItemsLists: FC = () => {
       id: "33",
     },
   ];
-
   const isClicked = false;
 
   return (
-    <section className="grid grid-cols-2 gap-[10px]">
+    <section className="grid grid-cols-2 gap-[10px] md:grid-cols-4">
       {DUMMY_PRODUCTS.map((product, index) => (
-        <div
-          key={index}
-          className="flex flex-col justify-center gap-[12px] bg-[#F9F8F6] rounded-[12px] p-[12px] w-full"
-        >
-          <div>
-            <Image
-              src={product.imageUrl}
-              alt={product.name}
-              width={150}
-              height={150}
-              className="h-auto w-full aspect-square mix-blend-multiply object-cover"
-            />
-          </div>
-          <div className="flex flex-col items-start justify-center gap-[2px] mb-[27px]">
-            <span className="text-[22px] font-bold leading-[32px]">
-              ${product.price}
-            </span>
-            <span className="text-[16px] font-[400px] leading-[16px]">
-              {product.name}
-            </span>
-          </div>
-          <div className="flex items-center justify-between w-full">
-            {isClicked ? (
-              <div className="flex justify-between w-full">
-                <div>-</div>
-                <span>1.2 kg</span>
-                <div>+</div>
-              </div>
-            ) : (
-              <div className="flex items-center justify-between w-full">
-                <span className="text-[16px] font-[400px] leading-[16px] opacity-[30%]">
-                  {product.weight} {product.metadata.unit}
-                </span>
-                <div className="flex items-center justify-center border-[1px] rounded-full h-[40px] w-[40px] cursor-pointer hover:bg-slate-100">
-                  <Image
-                    src={"/icons/plus-add.svg"}
-                    alt={product.name}
-                    width={24}
-                    height={24}
-                  />
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
+        <ProductCard key={index} {...product} />
       ))}
     </section>
   );
 };
 
-export default ItemsLists;
+export default ProductLists;

@@ -1,13 +1,13 @@
 "use client";
 import { FC, useState } from "react";
 
-const Tabs: FC = () => {
+const NavBar: FC = () => {
   const [choosedCategory, setChoosedCategory] = useState("All");
 
   const CATEGORIES = ["All", "Spicy", "Dressings", "Sweet", "Roots"];
 
   return (
-    <nav className="flex gap-[30px] mb-[20px] mt-[20px] overflow-x-scroll w-full">
+    <nav className="flex items-start gap-[30px] mb-[20px] mt-[20px] overflow-x-scroll min-h-[40px] w-full whitespace-nowrap overscroll-x-contain">
       {CATEGORIES.map((category, index) => (
         <div
           key={index}
@@ -25,4 +25,4 @@ const Tabs: FC = () => {
   );
 };
 
-export default Tabs;
+export default NavBar;
