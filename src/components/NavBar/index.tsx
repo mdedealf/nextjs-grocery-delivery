@@ -4,10 +4,21 @@ import { FC, useState } from "react";
 const NavBar: FC = () => {
   const [choosedCategory, setChoosedCategory] = useState("All");
 
-  const CATEGORIES = ["All", "Spicy", "Dressings", "Sweet", "Roots"];
+  const CATEGORIES = [
+    "All",
+    "Spicy",
+    "Dressings",
+    "Sweet",
+    "Roots",
+    "White Onion",
+    "Fresh Veggie",
+    "Fresh Garlic",
+    "Red Chili Pepper",
+    "Ranch Dressing",
+  ];
 
   return (
-    <nav className="flex items-start gap-[30px] mb-[20px] mt-[20px] overflow-x-scroll min-h-[40px] w-full whitespace-nowrap overscroll-x-contain">
+    <nav className="flex items-start gap-[32px] mb-[20px] mt-[26px] overflow-x-scroll min-h-[40px] md:min-h-[50px] w-full whitespace-nowrap">
       {CATEGORIES.map((category, index) => (
         <div
           key={index}

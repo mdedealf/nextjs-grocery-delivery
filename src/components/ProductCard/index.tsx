@@ -19,7 +19,10 @@ const ProductCard: FC<Product> = ({
           alt={name}
           width={113}
           height={145}
-          className="h-auto w-full aspect-square mix-blend-multiply object-cover"
+          quality={100}
+          unoptimized
+          sizes="(min-width: 768px) 50vw, 100vw"
+          className="h-full w-full aspect-square mix-blend-multiply object-contain"
         />
       </div>
       <div className="flex flex-col items-start justify-center gap-[2px] mb-[18px]">
@@ -32,10 +35,26 @@ const ProductCard: FC<Product> = ({
       </div>
       <div className="flex items-center justify-between w-full">
         {false ? (
-          <div className="flex justify-between w-full">
-            <div>-</div>
-            <span>1.2 kg</span>
-            <div>+</div>
+          <div className="flex items-center justify-between w-full">
+            <div className="flex items-center justify-center border-[1px] rounded-full h-[44px] w-[44px] cursor-pointer bg-black">
+              <Image
+                src={"/icons/minus-reduce-white.svg"}
+                alt="add icon"
+                width={24}
+                height={24}
+              />
+            </div>
+            <span className="text-[16px] md:text-[20px] font-[400px] leading-[16px]">
+              1.2 kg
+            </span>
+            <div className="flex items-center justify-center border-[1px] rounded-full h-[44px] w-[44px] cursor-pointer bg-black">
+              <Image
+                src={"/icons/plus-add-white.svg"}
+                alt="add icon"
+                width={24}
+                height={24}
+              />
+            </div>
           </div>
         ) : (
           <div className="flex items-center justify-between w-full">
