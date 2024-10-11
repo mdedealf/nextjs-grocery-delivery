@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { FC, ReactNode } from "react";
+import ClientProvider from "@/provider/clientProvider";
 
 export const metadata: Metadata = {
   title: "Fresh Goodies 🥦",
@@ -14,10 +15,11 @@ interface RootLayoutProps {
 const RootLayout: FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
-      <head>
-        <title>Fresh Goodies 🥦</title>
-      </head>
-      <body>{children}</body>
+      <body>
+        <ClientProvider>
+          {children}
+        </ClientProvider>
+      </body>
     </html>
   );
 };
