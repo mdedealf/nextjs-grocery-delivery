@@ -19,7 +19,7 @@ const NavBar: FC = () => {
   ];
 
   return (
-    <nav className="flex items-start gap-[26px] md:gap-[36px] mb-[20px] mt-[26px] md:mt-[46px] overflow-x-scroll  min-h-[40px] md:min-h-[52px] w-full whitespace-nowrap">
+    <nav className="flex items-start gap-[26px] md:gap-[36px] mb-[20px] mt-[26px] md:mt-[46px] min-h-[40px] md:min-h-[52px] w-screen px-[16px] mx-[-16px] overflow-x-scroll  whitespace-nowrap">
       {CATEGORIES.map((category, index) => (
         <div
           key={index}

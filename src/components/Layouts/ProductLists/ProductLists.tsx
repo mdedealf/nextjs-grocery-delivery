@@ -2,7 +2,7 @@ import ProductCard from "@/components/ProductCard";
 import { ALL_PRODUCTS_ROUTE } from "@/constant/apiRoutes";
 import { Product } from "@/types/products";
 import { useQuery } from "@tanstack/react-query";
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 
 const ProductLists: FC = () => {
   const fetchProducts = async () => {
